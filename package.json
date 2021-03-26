@@ -1,10 +1,8 @@
 {
-    "name": "com.pickgliss.utils",
-    "displayName": "utils",
-    "version": "0.0.1",
-    "unity": "2020.3",
-    "description": "utils",
-    "dependencies": {
-    },
-    "hideInEditor": false
-  }
+  "name": "com.pickgliss.utils",
+  "displayName": "Utils",
+  "version": "0.0.1",
+  "unity": "2020.3",
+  "description": "utils",
+  "hideInEditor": false
+}
