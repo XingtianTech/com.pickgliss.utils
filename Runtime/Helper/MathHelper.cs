@@ -1,6 +1,6 @@
 using Unity.Mathematics;
 
-namespace Helper
+namespace Pickgliss.Helper
 {
     public static class MathHelper
     {
