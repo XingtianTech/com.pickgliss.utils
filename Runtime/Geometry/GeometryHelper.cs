@@ -44,7 +44,7 @@ namespace Pickgliss.Geometry
                 line.p1.x = math.min(r1.Right,r2.Right);
             }else
             {
-                // Debug.LogError("GetRoomIntercetion Error Rect No connections");
+                Debug.LogWarning("GetRectConnected Rect No connections");
             }
             return line;
         }
