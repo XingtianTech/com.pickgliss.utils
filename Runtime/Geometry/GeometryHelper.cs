@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using Unity.Mathematics;
-using UnityEngine;
 
 namespace Pickgliss.Geometry
 {
+    using UnityEngine;
     public static class GeometryHelper
     {
         public static List<Line2D> GetOutline(Rect rect)
