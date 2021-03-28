@@ -19,10 +19,10 @@ namespace Pickgliss.Geometry
             var length0 = Length();
             var length1 = other.Length();
             if (length0 < length1) {
-                return -1;
+                return 1;
             }
             if (length0 > length1) {
-                return 1;
+                return -1;
             }
             return 0;
         }
@@ -30,6 +30,11 @@ namespace Pickgliss.Geometry
         public bool Equals(Line2D other)
         {
             return other.p0.Equals(p0) && other.p1.Equals(p1);
+        }
+
+        public override string ToString()
+        {
+            return $"{p0}  {p1}";
         }
 
         public float Length() => math.distance (p0, p1);
