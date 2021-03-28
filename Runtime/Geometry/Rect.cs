@@ -32,12 +32,25 @@ namespace Pickgliss.Geometry
             return false;
         }
 
-        public bool CollidesWith(Rect rect)
+        public bool OverlapWith(Rect rect)
         {
-            if(rect.Left >= Right ||
-                rect.Bottom >= Top ||
-                rect.Right <= Left ||
-                rect.Top <= Bottom)
+            if(rect.Left >= Right || rect.Right <= Left)
+            {
+                return false;
+            }
+            if(rect.Bottom >= Top || rect.Top <= Bottom)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool ConnectWith(Rect rect)
+        {
+            if(rect.Left > Right ||
+                rect.Bottom > Top ||
+                rect.Right < Left ||
+                rect.Top < Bottom)
             {
                 return false;
             }
