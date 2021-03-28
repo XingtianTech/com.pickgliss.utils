@@ -71,9 +71,10 @@ namespace Pickgliss.Geometry
         public int Right => x + width;
         public int Bottom => y;
         public int Top => y + height;
-
-        public int CenterX => x + width/2;
-        public int CenterY => y + height/2;
+        public int HalfWidth => width/2;
+        public int HalfHeight => height/2;
+        public int CenterX => x + HalfWidth;
+        public int CenterY => y + HalfHeight;
         public int2 Center //=> new int2(CenterX,CenterY);
         {
             get => new int2(CenterX,CenterY);
