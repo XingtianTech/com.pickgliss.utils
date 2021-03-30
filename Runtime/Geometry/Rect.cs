@@ -22,6 +22,7 @@ namespace Pickgliss.Geometry
             height = math.abs(p1.y-p2.y);
         }
 
+        public bool Contains(Rect r) => Contains(LeftBottom) && Contains(LeftTop) && Contains(RightBottom) && Contains(RightTop);
         public bool Contains(int2 p) => Contains(p.x,p.y);
         public bool Contains(int px, int py)
         {
