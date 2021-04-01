@@ -6,7 +6,7 @@ namespace Pickgliss.Attribute
     {
         public EnumFlagsAttribute() { }
     }
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
     [CustomPropertyDrawer(typeof(EnumFlagsAttribute))]
     public class EnumFlagsAttributeDrawer : PropertyDrawer
     {
@@ -15,5 +15,5 @@ namespace Pickgliss.Attribute
             property.intValue = EditorGUI.MaskField(position, label, property.intValue, property.enumNames);
         }
     }
-    #endif
+#endif
 }
