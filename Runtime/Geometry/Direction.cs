@@ -13,4 +13,14 @@ namespace Pickgliss.Geometry
         Top = 1 << 5,
         
     }
+
+    [Flags]
+    public enum Direction2D : int
+    {
+        None = 0,
+        Left = Direction.Left,
+        Right = Direction.Right,
+        Front = Direction.Front,
+        Back = Direction.Back,
+    }
 }
