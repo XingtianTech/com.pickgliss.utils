@@ -14,13 +14,6 @@ namespace Pickgliss.Geometry
             this.width = width;
             this.height = height;
         }
-        public Rect (int2 p1,int2 p2)
-        {
-            x = math.min(p1.x,p2.x);
-            y = math.min(p1.y,p2.y);
-            width = math.abs(p1.x-p2.x);
-            height = math.abs(p1.y-p2.y);
-        }
 
         public bool Contains(Rect r) => Contains(LeftBottom) && Contains(LeftTop) && Contains(RightBottom) && Contains(RightTop);
         public bool Contains(int2 p) => Contains(p.x,p.y);
