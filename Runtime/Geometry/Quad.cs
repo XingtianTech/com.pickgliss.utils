@@ -10,6 +10,8 @@ namespace Pickgliss.Geometry
         public int3 p1;
         public int3 p2;
         public int3 p3;
+        public int3 Size => p2 - p0;
+        public int3 Start => p0;
         public Quad (int3 p0,int3 p1,int3 p2,int3 p3)
         {
             this.p0 = p0;
@@ -17,7 +19,6 @@ namespace Pickgliss.Geometry
             this.p2 = p2;
             this.p3 = p3;
         }
-
         public Line[] GetOutline()
         {
             var result = new Line [4];

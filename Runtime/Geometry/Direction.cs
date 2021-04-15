@@ -9,7 +9,8 @@ namespace Pickgliss.Geometry
         Right = 1 << 1,
         Front = 1 << 2,
         Back = 1 << 3,
-        Top = 1 << 4,
-        Bottom = 1 << 5
+        Bottom = 1 << 4,
+        Top = 1 << 5,
+        
     }
 }

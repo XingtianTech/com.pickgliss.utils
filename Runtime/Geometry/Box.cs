@@ -62,7 +62,7 @@ namespace Pickgliss.Geometry
                 depth = value.z;
             }  
         }
-        public Quad GetSideQuad(Direction direction)
+        public Quad GetQuad(Direction direction)
         {
             switch (direction)
             {
