@@ -1,5 +1,6 @@
 using Pickgliss.Geometry;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace Pickgliss.Helper
@@ -16,6 +17,13 @@ namespace Pickgliss.Helper
             for (int i = 0; i < lines.Count; i++)
             {
                 DrawLine2D(lines[i],color);
+            }
+        }
+        public static void DrawLine(Line [] lines,Color color)
+        {
+            for (int i = 0; i < lines.Length; i++)
+            {
+                Debug.DrawLine((float3)lines[i].p0,(float3)lines[i].p1,color);
             }
         }
     }

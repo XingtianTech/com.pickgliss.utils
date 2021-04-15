@@ -16,6 +16,16 @@ namespace Pickgliss.Geometry
             return result;
         }
 
+        public static List<Line2D> GetOutline(Plane plane)
+        {
+            var result = new List<Line2D>(4);
+            // result.Add(new Line2D(rect.LeftBottom,rect.LeftTop));
+            // result.Add(new Line2D(rect.LeftTop,rect.RightTop));
+            // result.Add(new Line2D(rect.RightTop,rect.RightBottom));
+            // result.Add(new Line2D(rect.RightBottom,rect.LeftBottom));
+            return result;
+        }
+
         public static Line2D? GetLinkedJoint(Rect r1 ,Rect r2)
         {
             var joint = new Line2D();
