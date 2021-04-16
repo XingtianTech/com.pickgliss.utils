@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace Pickgliss.Geometry
 {
     [Flags]
@@ -22,5 +25,22 @@ namespace Pickgliss.Geometry
         Right = Direction.Right,
         Front = Direction.Front,
         Back = Direction.Back,
+    }
+
+    public static class DirectionExtension
+    {
+        public static IEnumerable<Direction2D> GetFlags(this Direction2D input)
+        {
+            foreach (Direction2D value in Enum.GetValues(input.GetType()))
+            if (input.HasFlag(value))
+                yield return value;
+        }
+
+        public static IEnumerable<Direction> GetFlags(this Direction input)
+        {
+            foreach (Direction value in Enum.GetValues(input.GetType()))
+            if (input.HasFlag(value))
+                yield return value;
+        }
     }
 }
