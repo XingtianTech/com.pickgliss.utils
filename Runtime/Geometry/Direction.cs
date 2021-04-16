@@ -7,14 +7,23 @@ namespace Pickgliss.Geometry
     [Flags]
     public enum Direction : int
     {
-        Left = 1 << 0,
-        Right = 1 << 1,
-        Front = 1 << 2,
-        Back = 1 << 3,
-        Bottom = 1 << 4,
-        Top = 1 << 5,
+        Left = 1 << DirectionIndex.Left,
+        Right = 1 << DirectionIndex.Right,
+        Front = 1 << DirectionIndex.Front,
+        Back = 1 << DirectionIndex.Back,
+        Bottom = 1 << DirectionIndex.Bottom,
+        Top = 1 << DirectionIndex.Top,
         Walls = Left | Right | Front | Back,
-        
+    }
+
+    public enum DirectionIndex : int
+    {
+        Left = 0,
+        Right = 1,
+        Front = 2,
+        Back = 3,
+        Bottom = 4,
+        Top = 5,
     }
 
     public enum Direction2D : int
