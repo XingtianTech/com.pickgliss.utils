@@ -5,6 +5,23 @@ namespace Pickgliss.VoxelLevel
 {
     public static class SeedHelper
     {
+        public unsafe static string Uint4ToString(uint4 value)
+        {
+            var chars = stackalloc char[32];
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 7; j >= 0; j--)
+                {
+                    uint cur = value[i];
+                    cur >>= (j * 4);
+                    cur &= 0xF;
+                    chars[i * 8 + j] = k_HexToLiteral[cur];
+                }
+            }
+
+            return new string(chars, 0, 32);
+        }
+
         public unsafe static uint4 HashStringToUint4(string value)
         {
             var result = new uint4();
@@ -47,6 +64,7 @@ namespace Pickgliss.VoxelLevel
             }
             return value;
         }
+        static readonly char[] k_HexToLiteral = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
         const int k_GUIDStringLength = 32;
         static readonly sbyte[] k_LiteralToHex =
         {
