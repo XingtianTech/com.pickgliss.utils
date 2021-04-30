@@ -3,9 +3,10 @@ using UnityEngine;
 
 namespace Pickgliss.SOA
 {
-    [CreateAssetMenu(fileName = "FloatValue",menuName = SOASetting.SOA_Value+"FloatValue",order = 0)]
+    [CreateAssetMenu(fileName = FloatValue.Name,menuName = SOASetting.SOA_Value + FloatValue.Name,order = 0)]
     public class FloatValue : ScriptableObject
     {
+        public const string Name = "FloatValue";
 #if UNITY_EDITOR
         [Multiline]
         public string DeveloperDescription = "";
