@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace Pickgliss.SOA
 {
-    [CreateAssetMenu(fileName = FloatValue.Name,menuName = SOASetting.SOA_Value + FloatValue.Name,order = 0)]
-    public class FloatValue : ScriptableObject
+    [CreateAssetMenu(fileName = FloatVariable.Name,menuName = SOASetting.SOA_Value + FloatVariable.Name,order = 0)]
+    public class FloatVariable : ScriptableObject
     {
         public const string Name = "FloatValue";
 #if UNITY_EDITOR
@@ -18,7 +18,7 @@ namespace Pickgliss.SOA
             Value = value;
         }
 
-        public void SetValue(FloatValue value)
+        public void SetValue(FloatVariable value)
         {
             Value = value.Value;
         }
@@ -28,7 +28,7 @@ namespace Pickgliss.SOA
             Value += amount;
         }
 
-        public void ApplyChange(FloatValue amount)
+        public void ApplyChange(FloatVariable amount)
         {
             Value += amount.Value;
         }

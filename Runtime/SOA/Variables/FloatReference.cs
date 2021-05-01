@@ -3,16 +3,16 @@ using UnityEngine;
 namespace Pickgliss.SOA
 {
     [Serializable]
-    public class FloatRef
+    public class FloatReference
     {
         public bool UseConstant = true;
         public float ConstantValue;
-        public FloatValue Variable;
+        public FloatVariable Variable;
 
-        public FloatRef()
+        public FloatReference()
         { }
 
-        public FloatRef(float value)
+        public FloatReference(float value)
         {
             UseConstant = true;
             ConstantValue = value;
@@ -23,7 +23,7 @@ namespace Pickgliss.SOA
             get { return UseConstant ? ConstantValue : Variable.Value; }
         }
 
-        public static implicit operator float(FloatRef reference)
+        public static implicit operator float(FloatReference reference)
         {
             return reference.Value;
         }
