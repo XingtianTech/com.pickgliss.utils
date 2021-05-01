@@ -4,6 +4,10 @@ using UnityEngine;
 namespace Pickgliss.SOA
 {
     [CustomPropertyDrawer(typeof(NumericReference<int>))]
+    [CustomPropertyDrawer(typeof(NumericReference<float>))]
+    [CustomPropertyDrawer(typeof(NumericReference<byte>))]
+    [CustomPropertyDrawer(typeof(NumericReference<long>))]
+    [CustomPropertyDrawer(typeof(NumericReference<bool>))]
     public class NumericReferenceDrawer : PropertyDrawer
     {
         /// <summary>
