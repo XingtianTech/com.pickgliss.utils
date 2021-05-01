@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Pickgliss.SOA
 {
-    public class NumericVariable<T> : ScriptableObject where T : unmanaged
+    public abstract class NumericVariable<T> : ScriptableObject where T : unmanaged
     {
 #if UNITY_EDITOR
         [Multiline]
