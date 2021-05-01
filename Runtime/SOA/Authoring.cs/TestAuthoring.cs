@@ -6,8 +6,13 @@ namespace Pickgliss.SOA
 {
     public class TestAuthoring : MonoBehaviour
     {
-        public GameEvent1 action;
+        public UnityEvent action;
         public GameEventParameters<NumericReference<int>> ac2;
+
+        public void writeTest(string input1)
+        {
+
+        }
         public void Testcall(NumericReference<int> input)
         {
             // return "aaa";
