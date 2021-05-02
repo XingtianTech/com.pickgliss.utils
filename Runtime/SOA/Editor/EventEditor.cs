@@ -1,3 +1,6 @@
+using UnityEditor;
+using UnityEngine;
+
 namespace Pickgliss.SOA
 {
     [CustomEditor(typeof(GameEvent), editorForChildClasses: true)]
