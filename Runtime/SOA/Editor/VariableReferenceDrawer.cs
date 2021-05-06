@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace Pickgliss.SOA
 {
-    [CustomPropertyDrawer(typeof(NumericReference<int>))]
-    [CustomPropertyDrawer(typeof(NumericReference<float>))]
-    [CustomPropertyDrawer(typeof(NumericReference<byte>))]
-    [CustomPropertyDrawer(typeof(NumericReference<long>))]
-    [CustomPropertyDrawer(typeof(NumericReference<bool>))]
-    public class NumericReferenceDrawer : PropertyDrawer
+    [CustomPropertyDrawer(typeof(VariableReference<int>))]
+    [CustomPropertyDrawer(typeof(VariableReference<float>))]
+    [CustomPropertyDrawer(typeof(VariableReference<byte>))]
+    [CustomPropertyDrawer(typeof(VariableReference<long>))]
+    [CustomPropertyDrawer(typeof(VariableReference<bool>))]
+    public class VariableReferenceDrawer : PropertyDrawer
     {
         /// <summary>
         /// Options to display in the popup to select constant or variable.

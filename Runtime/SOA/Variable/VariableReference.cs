@@ -3,16 +3,16 @@ using UnityEngine;
 namespace Pickgliss.SOA
 {
     [Serializable]
-    public class NumericReference<T> where T : unmanaged
+    public class VariableReference<T> where T : unmanaged
     {
         public bool UseConstant = true;
         public T ConstantValue;
-        public NumericVariable<T> Variable;
+        public Variable<T> Variable;
 
-        public NumericReference()
+        public VariableReference()
         { }
 
-        public NumericReference(T value)
+        public VariableReference(T value)
         {
             UseConstant = true;
             ConstantValue = value;
@@ -20,10 +20,10 @@ namespace Pickgliss.SOA
 
         public T Value
         {
-            get { return UseConstant ? ConstantValue : Variable.Variable; }
+            get { return UseConstant ? ConstantValue : Variable.Value; }
         }
 
-        public static implicit operator T(NumericReference<T> reference)
+        public static implicit operator T(VariableReference<T> reference)
         {
             return reference.Value;
         }

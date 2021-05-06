@@ -4,22 +4,22 @@ using UnityEngine;
 
 namespace Pickgliss.SOA
 {
-    public abstract class NumericVariable<T> : ScriptableObject where T : unmanaged
+    public abstract class Variable<T> : ScriptableObject where T : unmanaged
     {
 #if UNITY_EDITOR
         [Multiline]
         public string DeveloperDescription = "";
 #endif
-        public T Variable;
+        public T Value;
 
         public void SetValue(T value)
         {
-            Variable = value;
+            Value = value;
         }
 
-        public void SetValue(NumericVariable<T> value)
+        public void SetValue(Variable<T> value)
         {
-            Variable = value.Variable;
+            SetValue(value.Value);
         }
     }
 }
