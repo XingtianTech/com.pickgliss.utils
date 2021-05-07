@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using Random = Unity.Mathematics.Random;
 
 namespace Pickgliss.SOA
 {
@@ -8,22 +9,24 @@ namespace Pickgliss.SOA
     public class RandomUint2 : ScriptableObject
     {
         public const string Name = "RandomUint2";
-        public Int4Variable seed;
-        public int count;
-        public int2 min;
-        public int2 max;
+        public UInt4Variable seed;
+        public IntVariable count;
+        public Int2Variable min;
+        public Int2Variable max;
+        private List<int2> _result;
+        public List<int2> Value => _result;
 
-        public List<int2> Value;
-        
         private void OnEnable()
         {
-            Value = new List<int2>();
+            _result = new List<int2>();
+            OnValidate();
         }
 
         private void OnValidate()
         {
-            Value.Clear();
-            for (int i = 0; i < count; i++)
+            var random = new Random(seed.Value.x);
+            _result.Clear();
+            for (int i = 0; i < count.Value; i++)
             {
                 
             }
