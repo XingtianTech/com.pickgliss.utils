@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -8,10 +9,25 @@ namespace Pickgliss.SOA
     {
         public const string Name = "RandomUint2";
         public Int4Variable seed;
-        public IntVariable count;
-        public Int2Variable min;
-        public Int2Variable max;
+        public int count;
+        public int2 min;
+        public int2 max;
+
+        public List<int2> Value;
         
+        private void OnEnable()
+        {
+            Value = new List<int2>();
+        }
+
+        private void OnValidate()
+        {
+            Value.Clear();
+            for (int i = 0; i < count; i++)
+            {
+                
+            }
+        }
         
     }
 }

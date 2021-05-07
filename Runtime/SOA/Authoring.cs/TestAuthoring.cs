@@ -1,4 +1,5 @@
 using System;
+using Pickgliss.Attribute;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,9 +9,9 @@ namespace Pickgliss.SOA
     {
         // public UnityEvent action;
         public VariableReference<int> intValue;
+        
         // public NumericUpdater<int> intUpdater;
         // public GameEventParameters<NumericReference<int>> ac2;
-
         public void writeTest(string input1)
         {
 
@@ -23,4 +24,5 @@ namespace Pickgliss.SOA
 
     [Serializable] public class GameEvent1 : UnityEvent<string> { }
     [Serializable] public class GameEventParameters<T> : UnityEvent<T> { }
+    
 }
