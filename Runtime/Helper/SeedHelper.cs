@@ -21,7 +21,6 @@ namespace Pickgliss.VoxelLevel
 
             return new string(chars, 0, 32);
         }
-
         public unsafe static uint4 HashStringToUint4(string value)
         {
             var result = new uint4();
