@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Pickgliss.SOA
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(fileName = "GameEvent",menuName = "Event/GameEvent")]
     public class GameEvent : ScriptableObject
     {
         /// <summary>
