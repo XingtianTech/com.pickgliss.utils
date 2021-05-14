@@ -1,7 +1,8 @@
+using Pickgliss.SOA;
 using UnityEngine;
-namespace Pickgliss.VoxelLevel
+namespace Pickgliss.SOA
 {
-    public class ScriptableUpdater : ScriptableObject
+    public abstract class ScriptableUpdater : ScriptableObject
     {
         public VoidEvent validateEvent;
         public VoidEvent updateEvent = default;
