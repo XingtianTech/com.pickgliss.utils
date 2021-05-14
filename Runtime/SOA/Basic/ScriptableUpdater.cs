@@ -20,6 +20,6 @@ namespace Pickgliss.SOA
         {
             updateEvent.OnEventRaised -= Update;
         }
-        public abstract void Update();
+        public virtual void Update(){}
     }
 }

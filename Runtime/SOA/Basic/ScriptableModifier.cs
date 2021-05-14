@@ -10,6 +10,6 @@ namespace Pickgliss.SOA
             Update();
             validateEvent.RaiseEvent();
         }
-        protected abstract void Update();
+        protected virtual void Update(){}
     }
 }
