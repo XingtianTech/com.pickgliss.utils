@@ -8,7 +8,7 @@ namespace Pickgliss.SOA
         public VoidEvent updateEvent = default;
         private void OnEnable()
 	    {   
-            updateEvent.OnEventRaised += Update;
+            updateEvent.OnEventRaised += OnValidate;
         }
         private void OnValidate()
         {
@@ -18,7 +18,7 @@ namespace Pickgliss.SOA
 
         private void OnDisable()
         {
-            updateEvent.OnEventRaised -= Update;
+            updateEvent.OnEventRaised -= OnValidate;
         }
         public virtual void Update(){}
     }

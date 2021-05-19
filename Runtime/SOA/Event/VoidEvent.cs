@@ -9,8 +9,7 @@ namespace Pickgliss.SOA
         public UnityAction OnEventRaised;
         public void RaiseEvent()
         {
-            if (OnEventRaised != null)
-                OnEventRaised.Invoke();
+            OnEventRaised.Invoke();
         }
     }
 }
