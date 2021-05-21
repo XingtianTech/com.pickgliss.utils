@@ -12,7 +12,7 @@ namespace Pickgliss.SOA
             validateEvent.RaiseEvent();
             Debug.LogFormat("ScriptableModifier validateEvent.RaiseEvent");
         }
-        protected virtual void Update(){}
+        public virtual void Update(){}
 
     }
 }
