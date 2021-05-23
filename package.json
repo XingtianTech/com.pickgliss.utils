@@ -4,5 +4,8 @@
   "version": "0.0.1",
   "unity": "2020.3",
   "description": "utils",
-  "hideInEditor": false
+  "hideInEditor": false,
+  "dependencies": {
+    "com.unity.mathematics": "1.2.1"
+  }
 }
