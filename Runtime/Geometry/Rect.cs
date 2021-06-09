@@ -26,7 +26,7 @@ namespace Pickgliss.Geometry
             return false;
         }
 
-        public bool CollideWith(Rect rect)
+        public bool Collide(Rect rect)
         {
             if(rect.Left >= Right || rect.Right <= Left)
             {
