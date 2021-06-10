@@ -1,7 +1,7 @@
 
 using Unity.Mathematics;
 
-namespace Pickgliss.VoxelLevel
+namespace Pickgliss.SOA
 {
     public static class SeedHelper
     {
