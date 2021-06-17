@@ -15,6 +15,9 @@ namespace Pickgliss.Geometry
         Bottom = 1 << DirectionIndex.Bottom,
         Top = 1 << DirectionIndex.Top,
         Walls = Left | Right | Front | Back,
+        Horizontal = Left | Right,
+        Vertical = Front | Back,
+        Stacked = Top | Bottom
     }
 
     public enum DirectionIndex : int
