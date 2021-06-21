@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 namespace Pickgliss.SOA
 {
@@ -15,5 +16,12 @@ namespace Pickgliss.SOA
             }
             return result;
         }
+
+        public List<T> Next(int2 range)
+        {
+            var count = seed.rnd3.NextInt(range.x,range.y);
+            return Next(count);
+        }
+        
     }
 }
