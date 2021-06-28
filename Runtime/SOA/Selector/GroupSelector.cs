@@ -3,10 +3,10 @@ using Unity.Mathematics;
 using UnityEngine;
 namespace Pickgliss.SOA
 {
-    public class GroupSelector<T> : ScriptableObject where T : class
+    public abstract class GroupSelector<T> : ScriptableObject
     {
         public SubSeed seed;
-        public virtual T NextOne(){ return null;}
+        public abstract T NextOne();
         public List<T> Next(int count)
         {
             var result = new List<T>();
