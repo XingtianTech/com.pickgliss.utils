@@ -6,7 +6,6 @@ namespace Pickgliss.SOA
     public class RatedSelector<T> : GroupSelector<T> where T : class
     {
         public List<RatedItem<T>> items = new List<RatedItem<T>>();
-
         public override T NextOne()
         {
             var r = seed.rnd4.NextFloat();
