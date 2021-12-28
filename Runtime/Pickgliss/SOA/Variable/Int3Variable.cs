@@ -1,0 +1,11 @@
+using Unity.Mathematics;
+using UnityEngine;
+
+namespace Pickgliss.SOA.Variable
+{
+    [CreateAssetMenu(fileName = Int3Variable.Name,menuName = SOASetting.SOA_Value + Int3Variable.Name,order = 0)]
+    public class Int3Variable : Variable<int3>
+    {
+        public const string Name = "Int3";
+    }
+}
