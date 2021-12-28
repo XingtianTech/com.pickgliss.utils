@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Pickgliss.SOA.Random;
+using Pickgliss.Random;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -7,7 +7,7 @@ namespace Pickgliss.SOA.Selector
 {
     public abstract class GroupSelector<T> : ScriptableObject
     {
-        public SubSeed seed;
+        public Prng prng;
         public abstract T NextOne();
         public List<T> Next(int count)
         {
@@ -21,7 +21,7 @@ namespace Pickgliss.SOA.Selector
 
         public List<T> Next(int2 range)
         {
-            var count = seed.rnd3.NextInt(range.x,range.y);
+            var count = prng.Range(range.x,range.y);
             return Next(count);
         }
         

@@ -7,7 +7,7 @@ namespace Pickgliss.SOA.Selector
         public List<T> list = new List<T>();
         public override T NextOne()
         {
-            var index = seed.rnd2.NextInt(list.Count);
+            var index = prng.Range(0,list.Count);
             return list[index];
         }
     }

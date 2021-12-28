@@ -1,5 +1,5 @@
 using System;
-using Pickgliss.Seed;
+using Pickgliss.Random;
 using UnityEngine;
 
 namespace Pickgliss.Noise
@@ -11,13 +11,13 @@ namespace Pickgliss.Noise
 		public float gain = 1;
 		public float peakSmoothing = 0;
 
-		public override void SetComputeValues(ComputeShader cs, PRNG prng, string varSuffix)
+		public override void SetComputeValues(ComputeShader cs, Prng prng, string varSuffix)
 		{
 			SetComputeValues(cs, prng, varSuffix, scale, elevation, power);
 		}
 
 		// Set values using custom scale and elevation
-		public override void SetComputeValues(ComputeShader cs, PRNG prng, string varSuffix, float scale,
+		public override void SetComputeValues(ComputeShader cs, Prng prng, string varSuffix, float scale,
 			float elevation, float power)
 		{
 			Vector3 seededOffset = new Vector3(prng.Value(), prng.Value(), prng.Value()) * prng.Value() * 10000;

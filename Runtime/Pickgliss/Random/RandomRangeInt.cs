@@ -1,16 +1,16 @@
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace Pickgliss.SOA.Random
+namespace Pickgliss.Random
 {
     [CreateAssetMenu(fileName = "RandomRangeInt",menuName = "Random/RandomRangeInt")]
     public class RandomRangeInt : ScriptableObject
     {
-        public SubSeed seed;
+        public Prng prng;
         public int2 range;
         public int Next()
         {
-            return seed.rnd2.NextInt(range.x,range.y);
+            return prng.Range(range.x,range.y);
         }
     }
 }

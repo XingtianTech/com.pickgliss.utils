@@ -1,5 +1,5 @@
 using System;
-using Pickgliss.Seed;
+using Pickgliss.Random;
 using UnityEngine;
 
 namespace Pickgliss.Noise
@@ -16,20 +16,20 @@ namespace Pickgliss.Noise
 		public float verticalShift = 0;
 		public Vector3 offset;
 
-		public virtual void SetComputeValues(ComputeShader cs, PRNG prng, string varSuffix)
+		public virtual void SetComputeValues(ComputeShader cs, Prng prng, string varSuffix)
 		{
 			SetComputeValues(cs, prng, varSuffix, scale, elevation, persistence);
 		}
 
 		// Set values using custom scale and elevation
-		public virtual void SetComputeValues(ComputeShader cs, PRNG prng, string varSuffix, float scale,
+		public virtual void SetComputeValues(ComputeShader cs, Prng prng, string varSuffix, float scale,
 			float elevation)
 		{
 			SetComputeValues(cs, prng, varSuffix, scale, elevation, persistence);
 		}
 
 		// Set values using custom scale and elevation
-		public virtual void SetComputeValues(ComputeShader cs, PRNG prng, string varSuffix, float scale,
+		public virtual void SetComputeValues(ComputeShader cs, Prng prng, string varSuffix, float scale,
 			float elevation, float persistence)
 		{
 			Vector3 seededOffset = new Vector3(prng.Value(), prng.Value(), prng.Value()) * prng.Value() * 10000;

@@ -9,7 +9,7 @@ namespace Pickgliss.SOA.Selector
         public List<RatedItem<T>> items = new List<RatedItem<T>>();
         public override T NextOne()
         {
-            var r = seed.rnd4.NextFloat();
+            var r = prng.Value();
             for (int i = 0; i < items.Count; i++)
             {
                 if(r<=items[i].rate)return items[i].item;
