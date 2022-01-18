@@ -6,24 +6,23 @@ namespace Pickgliss.SOA.Event
     public class GameEventListener : UnityEngine.MonoBehaviour
     {
         [Tooltip("Event to register with.")]
-        public GameEvent Event;
-
+        public GameEvent @event;
         [Tooltip("Response to invoke when Event is raised.")]
-        public UnityEvent Response;
+        public UnityEvent response;
 
         private void OnEnable()
         {
-            Event.RegisterListener(this);
+            @event.RegisterListener(this);
         }
 
         private void OnDisable()
         {
-            Event.UnregisterListener(this);
+            @event.UnregisterListener(this);
         }
 
-        public void OnEventRaised()
+        public virtual void OnEventRaised()
         {
-            Response.Invoke();
+            response.Invoke();
         }
     }
 }

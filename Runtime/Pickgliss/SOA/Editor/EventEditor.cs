@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Pickgliss.SOA.Editor
 {
-    [CustomEditor(typeof(GameEvent), editorForChildClasses: true)]
+    [CustomEditor(typeof(GameEvent), true)]
     public class EventEditor : UnityEditor.Editor
     {
         public override void OnInspectorGUI()

@@ -3,9 +3,33 @@ using UnityEngine;
 
 namespace Pickgliss.SOA.Variable
 {
-    [CreateAssetMenu(fileName = FloatVariable.Name,menuName = SOASetting.SOA_Value + FloatVariable.Name,order = 0)]
-    public class FloatVariable : Variable<float>
+    [CreateAssetMenu(fileName = "FloatVariable",menuName = "Variable/FloatVariable")]
+    public class FloatVariable : ScriptableObject
     {
-        public const string Name = "Float";
+#if UNITY_EDITOR
+        [Multiline]
+        public string developerDescription = "";
+#endif
+        public float value;
+
+        public void SetValue(float v)
+        {
+            value = v;
+        }
+
+        public void SetValue(FloatVariable v)
+        {
+            value = v.value;
+        }
+
+        public void ApplyChange(float amount)
+        {
+            value += amount;
+        }
+
+        public void ApplyChange(FloatVariable amount)
+        {
+            value += amount.value;
+        }
     }
 }
