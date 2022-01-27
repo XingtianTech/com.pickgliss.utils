@@ -4,12 +4,12 @@ namespace Pickgliss.SOA.Collections
     {
         public Group group;
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             group.Add(this);
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             group.Remove(this);
         }

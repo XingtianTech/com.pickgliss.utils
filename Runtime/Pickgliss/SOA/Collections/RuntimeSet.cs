@@ -12,14 +12,6 @@ namespace Pickgliss.SOA.Collections
             if(canAdd){ items.Add(item); }
             return canAdd;
         }
-
-        public bool Add(T item,int index)
-        {
-            var canAdd = !items.Contains(item);
-            if (canAdd){items[index] = item;}
-            return canAdd;
-        }
-
         public new bool Remove(T item)
         {
             var canRemove = items.Contains(item);
