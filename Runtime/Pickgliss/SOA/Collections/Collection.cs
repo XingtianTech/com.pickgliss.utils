@@ -1,68 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Pickgliss.SOA.Collections
 {
-    public  class Collection<T> : ScriptableObject ,IList<T>
+    public  class Collection<T> : ScriptableObject where T :Object
     {
         public List<T> items;
-        public IEnumerator<T> GetEnumerator()
+        
+        public T GetRandomOne()
         {
-            return items.GetEnumerator();
+            var index = UnityEngine.Random.Range(0, items.Count - 1);
+            return items[index];
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
+        public T GetRandomOne(T exclude)
         {
-            return GetEnumerator();
-        }
-
-        public void Add(T item)
-        {
-            items.Add(item);
-        }
-
-        public void Clear()
-        {
-            items.Clear();
-        }
-
-        public bool Contains(T item)
-        {
-            return items.Contains(item);
-        }
-
-        public void CopyTo(T[] array, int arrayIndex)
-        {
-            items.CopyTo(array,arrayIndex);
-        }
-
-        public bool Remove(T item)
-        {
-            return items.Remove(item);
-        }
-
-        public int Count => items.Count;
-        public bool IsReadOnly => false;
-        public int IndexOf(T item)
-        {
-            return items.IndexOf(item);
-        }
-
-        public void Insert(int index, T item)
-        {
-            items.Insert(index,item);
-        }
-
-        public void RemoveAt(int index)
-        {
-            items.RemoveAt(index);
-        }
-
-        public T this[int index]
-        {
-            get => items[index];
-            set => items[index] = value;
+            while (true)
+            {
+                var nextOne = GetRandomOne();
+                if(nextOne == exclude) continue;
+                return nextOne;
+            }
         }
     }
 }

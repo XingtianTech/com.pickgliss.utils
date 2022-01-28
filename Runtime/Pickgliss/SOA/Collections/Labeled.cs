@@ -1,4 +1,6 @@
-﻿namespace Pickgliss.SOA.Collections
+﻿using Pickgliss.Collections;
+
+namespace Pickgliss.SOA.Collections
 {
     public class Labeled<T> : Collection<T> where T : UnityEngine.Object
     {
