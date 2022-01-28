@@ -7,13 +7,13 @@ namespace Pickgliss.SOA.Collections
     {
         public List<T> items;
         
-        public T GetRandomOne()
+        private T GetRandomOne()
         {
             var index = UnityEngine.Random.Range(0, items.Count - 1);
             return items[index];
         }
 
-        public T GetRandomOne(T exclude)
+        public T GetRandomOne(T exclude = null)
         {
             while (true)
             {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
-using Pickgliss.SOA.Variable;
+using Pickgliss.SOA.Variables;
 using UnityEngine;
 
 namespace Pickgliss.LootTables
@@ -38,7 +38,7 @@ namespace Pickgliss.LootTables
     public class RewardItem<T>
     {
         public T item;
-        public FloatReference weight;
+        public VariableReference<float> weight;
     }
 
 }

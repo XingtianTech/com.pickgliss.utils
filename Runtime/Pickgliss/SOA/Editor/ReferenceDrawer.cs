@@ -1,11 +1,12 @@
-﻿using Pickgliss.SOA.Variable;
+﻿using Pickgliss.SOA.Variables;
 using UnityEditor;
 using UnityEngine;
 
 namespace Pickgliss.SOA.Editor
 {
-    [CustomPropertyDrawer(typeof(FloatReference))]
-    public class FloatReferenceDrawer : PropertyDrawer
+    [CustomPropertyDrawer(typeof(VariableReference<float>))]
+    [CustomPropertyDrawer(typeof(VariableReference<int>))]
+    public class ReferenceDrawer : PropertyDrawer
     {
         /// <summary>
         /// Options to display in the popup to select constant or variable.
@@ -30,9 +31,9 @@ namespace Pickgliss.SOA.Editor
             EditorGUI.BeginChangeCheck();
 
             // Get properties
-            var useConstant = property.FindPropertyRelative(FloatReference.UseConstantPropertyString);
-            var constantValue = property.FindPropertyRelative(FloatReference.ConstantValuePropertyString);
-            var variable = property.FindPropertyRelative(FloatReference.VariablePropertyString);
+            var useConstant = property.FindPropertyRelative("useConstant");
+            var constantValue = property.FindPropertyRelative("constantValue");
+            var variable = property.FindPropertyRelative("variable");
 
             // Calculate rect for configuration button
             Rect buttonRect = new Rect(position);
