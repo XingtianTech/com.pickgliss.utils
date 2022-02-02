@@ -4,7 +4,7 @@ namespace Pickgliss.SOA.Collections
 {
     public class Thing : UnityEngine.MonoBehaviour
     {
-        public ThingRuntimeSet thingRuntimeSet;
+        public RuntimeSet<Thing> thingRuntimeSet;
 
         protected virtual void OnEnable()
         {
