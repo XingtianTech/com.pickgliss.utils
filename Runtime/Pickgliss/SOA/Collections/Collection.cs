@@ -13,7 +13,7 @@ namespace Pickgliss.SOA.Collections
             return items[index];
         }
 
-        public T GetRandomOne(T exclude = null)
+        public T GetRandomOne(T exclude)
         {
             while (true)
             {
