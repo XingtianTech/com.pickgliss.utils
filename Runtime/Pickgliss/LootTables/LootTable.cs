@@ -7,18 +7,18 @@ using UnityEngine;
 namespace Pickgliss.LootTables
 {
     
-    [CreateAssetMenu(fileName = "LootTable", menuName = "Collection/Loot Table")]
+    // [CreateAssetMenu(fileName = "LootTable", menuName = "Collection/Loot Table")]
     public class LootTable<T> : ScriptableObject
     {
         [SerializeField] protected List<RewardItem<T>> items;
 
         protected float TotalWeight;
-        protected virtual void OnValidate()
+        protected void Start()
         {
             TotalWeight = items.Sum(item => item.weight);
         }
 
-        public T GetRandomItem()
+        public T GetRandomOne()
         {
             var diceRoll = UnityEngine.Random.Range(0f, TotalWeight);
             foreach (var item in items)
