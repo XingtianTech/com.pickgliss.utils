@@ -1,13 +1,16 @@
-﻿namespace Pickgliss.SOA.Collections
+﻿using System.Collections.Generic;
+
+namespace Pickgliss.SOA.Collections
 {
     public class Library<T> : Collection<T> where T : UnityEngine.Object
     {
         public string[] labels;
-        public string[] searchInFolders;
+        public List<string> searchInFolders = new();
 
 #if UNITY_EDITOR
         protected string GetFilterString()
         {
+            if (labels == null) return "t:" + typeof(T).Name;
             var result = "";
             foreach (var label in labels)
             {
@@ -17,10 +20,20 @@
             return result;
         }
 
-        protected virtual void OnValidate()
+        protected void GarbObjects()
         {
             var filterString = GetFilterString();
-            var guids = UnityEditor.AssetDatabase.FindAssets (filterString,searchInFolders);
+            string[] guids;
+            if (searchInFolders.Count > 0)
+            {
+                guids = UnityEditor.AssetDatabase.FindAssets (filterString,searchInFolders.ToArray());
+            }
+            else
+            {
+                guids = UnityEditor.AssetDatabase.FindAssets(filterString);
+            }
+
+            items ??= new List<T>();
             items.Clear();
             foreach (var guid in guids)
             {
