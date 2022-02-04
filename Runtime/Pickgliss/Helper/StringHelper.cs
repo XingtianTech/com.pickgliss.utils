@@ -4,7 +4,7 @@ namespace Pickgliss.Helper
 {
     public static class StringHelper
     {
-        public static string FullPathToAbsolute( string absolutepath)
+        public static string FullPathToRelative( string absolutepath)
         {
             var relativepath = "";
             if (absolutepath.StartsWith(Application.dataPath)) {

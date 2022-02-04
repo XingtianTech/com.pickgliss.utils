@@ -18,7 +18,7 @@ namespace Pickgliss.LootTables
             TotalWeight = items.Sum(item => item.weight);
         }
 
-        public T GetRandomOne()
+        public T Loot()
         {
             var diceRoll = UnityEngine.Random.Range(0f, TotalWeight);
             foreach (var item in items)
