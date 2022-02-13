@@ -7,15 +7,22 @@ namespace Pickgliss.Tools
 {
     public class Timer : MonoBehaviour
     {
+        public bool invokeWhenStart = true;
         public VariableReference<int> times;
         public VariableReference<float> interval;
         public UnityEvent onTimer;
         IEnumerator Start()
         {
-            for (int i = 0; i < times; i++)
+            var t = times.Value;
+            if(invokeWhenStart)
             {
                 onTimer?.Invoke();
+                t --;
+            }
+            for (int i = 0; i < t; i++)
+            {
                 yield return new WaitForSeconds(interval);
+                onTimer?.Invoke();
             }
         }
     }
