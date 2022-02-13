@@ -1,4 +1,4 @@
-using Pickgliss.SOA.Event;
+using Pickgliss.SOA.Events;
 using UnityEditor;
 using UnityEngine;
 

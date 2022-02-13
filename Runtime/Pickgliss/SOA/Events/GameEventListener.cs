@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Pickgliss.SOA.Event
+namespace Pickgliss.SOA.Events
 {
     public class GameEventListener : UnityEngine.MonoBehaviour
     {
