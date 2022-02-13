@@ -1,5 +1,3 @@
-using System;
-using Pickgliss.SOA.Variables;
 using UnityEngine;
 
 namespace Pickgliss.Tools
