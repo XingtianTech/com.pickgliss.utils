@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Pickgliss.Tools
 {
+    [RequireComponent(typeof(MoveSpeed))]
     public class MoveTowards : MonoBehaviour
     {
         // public VariableReference<float> speed;
