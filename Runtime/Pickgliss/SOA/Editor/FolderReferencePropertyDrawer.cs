@@ -10,7 +10,7 @@ namespace Pickgliss.SOA.Editor
     {
         public string guid;
         public string Path => AssetDatabase.GUIDToAssetPath(guid);
-        public string AbsolutePath => StringHelper.ResolveAssetPath(Path);
+        public string AbsolutePath => PathHelper.ResolveAssetPath(Path);
     }
     [CustomPropertyDrawer(typeof(FolderReference))]
     public class FolderReferencePropertyDrawer : PropertyDrawer

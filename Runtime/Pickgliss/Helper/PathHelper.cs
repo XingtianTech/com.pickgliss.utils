@@ -4,28 +4,28 @@ using UnityEngine;
 
 namespace Pickgliss.Helper
 {
-    public static class StringHelper
+    public static class PathHelper
     {
         public static string AssetsFolder => Application.dataPath;
         public static string ResolveAssetPath(string assetPath) => Path.GetFullPath($"{AssetsFolder}/../{assetPath}");
-        public static string FullPathToRelative( string absolutepath)
+        public static string FullPathToRelative( string absolutePath)
         {
-            var relativepath = "";
-            if (absolutepath.StartsWith(Application.dataPath)) {
-                relativepath=  "Assets" + absolutepath.Substring(Application.dataPath.Length);
+            var relativePath = "";
+            if (absolutePath.StartsWith(Application.dataPath)) {
+                relativePath=  "Assets" + absolutePath.Substring(Application.dataPath.Length);
             }
 
-            return relativepath;
+            return relativePath;
         }
 
         public const string ResourcePath = "Assets/Resources/";
 
-        public static string AssetPathToResourcePath(string absolutepath)
+        public static string AssetPathToResourcePath(string absolutePath)
         {
-            var resource = absolutepath;
+            var resource = absolutePath;
             if (resource.StartsWith(ResourcePath))
             {
-                resource = absolutepath.Substring(ResourcePath.Length);
+                resource = absolutePath.Substring(ResourcePath.Length);
             }
             return resource;
         }

@@ -28,7 +28,7 @@ namespace Pickgliss.SOA.Collections
 
         public void Update()
         {
-            var resourcePath = StringHelper.AssetPathToResourcePath(folder.Path);
+            var resourcePath = PathHelper.AssetPathToResourcePath(folder.Path);
             items ??= new List<T>();
             items.Clear();
             var res = Resources.LoadAll<T>(resourcePath);
