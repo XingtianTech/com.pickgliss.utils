@@ -7,10 +7,7 @@ namespace Pickgliss.Tools
     [RequireComponent(typeof(MoveSpeed))]
     public class MoveTowards : MonoBehaviour
     {
-        // public VariableReference<float> speed;
         public Transform target;
-        
-        // public int Going => (int)Mathf.Sign(speed);
         private MoveSpeed _moveSpeed;
         private void Awake()
         {
