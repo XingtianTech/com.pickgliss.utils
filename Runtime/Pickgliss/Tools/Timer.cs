@@ -11,7 +11,13 @@ namespace Pickgliss.Tools
         public VariableReference<int> times;
         public VariableReference<float> interval;
         public UnityEvent onTimer;
-        IEnumerator Start()
+        private WaitForSeconds _waitForSeconds;
+        private void Awake()
+        {
+            _waitForSeconds = new WaitForSeconds(interval);
+        }
+
+        private IEnumerator Start()
         {
             var t = times.Value;
             if(invokeWhenStart)
@@ -19,9 +25,9 @@ namespace Pickgliss.Tools
                 onTimer?.Invoke();
                 t --;
             }
-            for (int i = 0; i < t; i++)
+            for (var i = 0; i < t; i++)
             {
-                yield return new WaitForSeconds(interval);
+                yield return _waitForSeconds;
                 onTimer?.Invoke();
             }
         }

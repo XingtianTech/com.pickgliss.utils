@@ -2,11 +2,11 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Pickgliss.SOA.Editor
+namespace UnityEditor.Pickgliss.SOA
 {
     [CustomPropertyDrawer(typeof(VariableReference<float>))]
     [CustomPropertyDrawer(typeof(VariableReference<int>))]
-    public class ReferenceDrawer : PropertyDrawer
+    public class VariableReferenceDrawer : PropertyDrawer
     {
         /// <summary>
         /// Options to display in the popup to select constant or variable.

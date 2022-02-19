@@ -1,17 +1,9 @@
 ﻿using System.IO;
-using Pickgliss.Helper;
-using UnityEditor;
+using Pickgliss.Extension;
 using UnityEngine;
 
-namespace Pickgliss.SOA.Editor
+namespace UnityEditor.Pickgliss
 {
-    [System.Serializable]
-    public class FolderReference
-    {
-        public string guid;
-        public string Path => AssetDatabase.GUIDToAssetPath(guid);
-        public string AbsolutePath => PathHelper.ResolveAssetPath(Path);
-    }
     [CustomPropertyDrawer(typeof(FolderReference))]
     public class FolderReferencePropertyDrawer : PropertyDrawer
     {

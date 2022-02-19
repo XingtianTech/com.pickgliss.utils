@@ -4,10 +4,16 @@ namespace Pickgliss.Tools
 {
     public class PrefabSpawner : MonoBehaviour
     {
-        public virtual void Spawn(GameObject prefab)
+        public void Spawn(GameObject prefab)
         {
-            var monster = Instantiate(prefab,transform);
-            monster.SetActive(true);
+            var item = Create(prefab);
+            item.SetActive(true);
+        }
+
+        protected virtual GameObject Create(GameObject prefab)
+        {
+            var item = Instantiate(prefab,transform);
+            return item;
         }
     }
 }

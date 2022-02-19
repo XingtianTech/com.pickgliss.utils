@@ -1,11 +1,10 @@
 using Pickgliss.SOA.Events;
-using UnityEditor;
 using UnityEngine;
 
-namespace Pickgliss.SOA.Editor
+namespace UnityEditor.Pickgliss.SOA
 {
     [CustomEditor(typeof(GameEvent), true)]
-    public class EventEditor : UnityEditor.Editor
+    public class GameEventEditor : Editor
     {
         public override void OnInspectorGUI()
         {
@@ -13,9 +12,12 @@ namespace Pickgliss.SOA.Editor
 
             GUI.enabled = Application.isPlaying;
 
-            GameEvent e = target as GameEvent;
+            var e = target as GameEvent;
             if (GUILayout.Button("Raise"))
-                e.Raise();
+            {
+                if (e != null) e.Raise();
+            }
+                
         }
     }
 }

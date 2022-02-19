@@ -6,12 +6,12 @@ namespace Pickgliss.Tools
     public class ThingSpawner : PrefabSpawner
     {
         public ThingRuntimeSet group;
-        public override void Spawn(GameObject prefab)
+        protected override GameObject Create(GameObject prefab)
         {
-            var monster = Instantiate(prefab,transform);
-            var com = monster.AddComponent<Thing>();
-            com.thingRuntimeSet = group;
-            monster.SetActive(true);
+            var item = Instantiate(prefab,transform);
+            var thing = item.AddComponent<Thing>();
+            thing.thingRuntimeSet = group;
+            return item;
         }
     }
 }

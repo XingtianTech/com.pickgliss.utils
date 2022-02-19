@@ -9,10 +9,15 @@ namespace Pickgliss.Tools
     {
         public VariableReference<float> second;
         public UnityEvent onTimeUp;
-
-        IEnumerator Start()
+        private WaitForSeconds _waitForSeconds;
+        private void Awake()
         {
-            yield return new WaitForSeconds(second);
+            _waitForSeconds = new WaitForSeconds(second);
+        }
+
+        private IEnumerator Start()
+        {
+            yield return _waitForSeconds;
             onTimeUp?.Invoke();
         }
     }
