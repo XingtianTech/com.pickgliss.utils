@@ -51,7 +51,7 @@ namespace Pickgliss.Tools
             // StartCoroutine(DragUpdate());
         }
 
-        protected virtual IEnumerator DragUpdate()
+        protected IEnumerator DragUpdate()
         {
             var initialDistance = Vector3.Distance(transform.position, mainCamera.transform.position);
             while (holdAction.action.ReadValue<float>() != 0)
