@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using Pickgliss.Extension;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -19,26 +18,26 @@ namespace Pickgliss.Tools
         private void OnEnable()
         {
             holdAction.action.Enable();
-            holdAction.action.started += startFollow;
+            holdAction.action.started += StartFollow;
             holdAction.action.performed += Holding;
-            holdAction.action.canceled += endFollow;
+            holdAction.action.canceled += EndFollow;
         }
         
         private void OnDisable()
         {
-            holdAction.action.started -= startFollow;
+            holdAction.action.started -= StartFollow;
             holdAction.action.performed -= Holding;
-            holdAction.action.canceled -= endFollow;
+            holdAction.action.canceled -= EndFollow;
             holdAction.action.Disable();
         }
 
 
-        protected virtual void endFollow(InputAction.CallbackContext callbackContext)
+        protected virtual void EndFollow(InputAction.CallbackContext callbackContext)
         {
             Debug.Log($"MouseFollow3D endFollow {callbackContext}");
         }
 
-        protected virtual void startFollow(InputAction.CallbackContext callbackContext)
+        protected virtual void StartFollow(InputAction.CallbackContext callbackContext)
         {
             Debug.Log($"MouseFollow3D startFollow {callbackContext}");
             StartCoroutine(DragUpdate());
