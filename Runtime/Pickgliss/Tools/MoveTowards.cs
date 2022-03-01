@@ -5,7 +5,7 @@ namespace Pickgliss.Tools
     [RequireComponent(typeof(MoveSpeed))]
     public class MoveTowards : MonoBehaviour
     {
-        public Transform target;
+        public GameObject target;
         private MoveSpeed _moveSpeed;
         private void Awake()
         {
@@ -17,7 +17,7 @@ namespace Pickgliss.Tools
             if (target == null) return;
             // Move our position a step closer to the target.
             var step =  _moveSpeed.speed * Time.deltaTime; // calculate distance to move
-            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
         }
     }
 }
