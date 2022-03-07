@@ -1,10 +1,12 @@
 using System;
+using Pickgliss.Extension;
 using UnityEditor;
 using UnityEngine;
 namespace Pickgliss.Tools
 {
     public class PlaceRelativeLocation : MonoBehaviour
     {
+        [HideInDerived]
         public GameObject relative;
         public MonoScript anchor;
         public Vector3 offset;
