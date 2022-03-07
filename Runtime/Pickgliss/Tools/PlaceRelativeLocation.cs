@@ -10,11 +10,11 @@ namespace Pickgliss.Tools
         public GameObject relative;
         public MonoScript anchor;
         public Vector3 offset;
-        protected Type anchorType;
+        private Type _anchorType;
         
         protected virtual void Awake()
         {
-            anchorType = anchor.GetClass();
+            _anchorType = anchor.GetClass();
         }
 
         protected virtual void Start()
@@ -30,7 +30,7 @@ namespace Pickgliss.Tools
             }
             else
             {
-                var com = relative.GetComponentInChildren(anchorType);
+                var com = relative.GetComponentInChildren(_anchorType);
                 transform.position = com.transform.position+offset;
             }
         }
