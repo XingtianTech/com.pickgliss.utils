@@ -1,3 +1,4 @@
+using Pickgliss.Extension;
 using UnityEngine;
 
 namespace Pickgliss.Tools
@@ -5,6 +6,7 @@ namespace Pickgliss.Tools
     [RequireComponent(typeof(MoveSpeed))]
     public class MoveTowards : MonoBehaviour
     {
+        [HideInDerived]
         public GameObject target;
         private MoveSpeed _moveSpeed;
         private void Awake()
