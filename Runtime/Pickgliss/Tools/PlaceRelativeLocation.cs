@@ -14,6 +14,7 @@ namespace Pickgliss.Tools
         
         protected virtual void Awake()
         {
+            if (anchor == null) return;
             _anchorType = anchor.GetClass();
         }
 
