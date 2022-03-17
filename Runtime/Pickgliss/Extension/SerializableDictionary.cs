@@ -5,19 +5,20 @@ using UnityEngine;
 
 namespace Pickgliss.Extension
 {
- 
     [Serializable]
     public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, ISerializationCallbackReceiver
     {
         [SerializeField]
-        private List<TKey> keys = new List<TKey>();
+        private List<TKey> keys = new();
         
         [SerializeField]
-        private List<TValue> values = new List<TValue>();
+        private List<TValue> values = new();
         
         // save the dictionary to lists
         public void OnBeforeSerialize()
         {
+            keys ??= new List<TKey>();
+            values ??= new List<TValue>();
             keys.Clear();
             values.Clear();
             foreach(KeyValuePair<TKey, TValue> pair in this)
@@ -30,13 +31,13 @@ namespace Pickgliss.Extension
         // load dictionary from lists
         public void OnAfterDeserialize()
         {
-            this.Clear();
+            Clear();
     
             if(keys.Count != values.Count)
-                throw new System.Exception(string.Format("there are {0} keys and {1} values after deserialization. Make sure that both key and value types are serializable."));
+                throw new Exception(string.Format("there are {0} keys and {1} values after deserialization. Make sure that both key and value types are serializable."));
     
             for(int i = 0; i < keys.Count; i++)
-                this.Add(keys[i], values[i]);
+                Add(keys[i], values[i]);
         }
     }
 }
