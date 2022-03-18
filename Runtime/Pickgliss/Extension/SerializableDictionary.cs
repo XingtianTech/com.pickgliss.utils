@@ -9,10 +9,10 @@ namespace Pickgliss.Extension
     public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, ISerializationCallbackReceiver
     {
         [SerializeField]
-        private List<TKey> keys = new();
+        private List<TKey> keys;
         
         [SerializeField]
-        private List<TValue> values = new();
+        private List<TValue> values;
         
         // save the dictionary to lists
         public void OnBeforeSerialize()
