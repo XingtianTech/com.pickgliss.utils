@@ -25,15 +25,8 @@ namespace Pickgliss.Tools
 
         protected void SetupPosition()
         {
-            if (anchor == null)
-            {
-                transform.position = relative.transform.position+offset;
-            }
-            else
-            {
-                var com = relative.GetComponentInChildren(_anchorType);
-                transform.position = com.transform.position+offset;
-            }
+            var relativeAnchor = anchor != null ? relative.GetComponentInChildren(_anchorType).transform : relative.transform;
+            transform.position = relativeAnchor.position+offset;
         }
         
     }
