@@ -2,13 +2,8 @@ using System;
 using UnityEngine;
 namespace Pickgliss.SOA.Variables
 {
-    public class Variable<T> : ScriptableObject where T: notnull
+    public class Variable<T> : VariableBase where T: notnull
     {
-        
-#if UNITY_EDITOR
-        [Multiline]
-        public string developerDescription = "";
-#endif
         public T value;
 
         public void SetValue(T v)
