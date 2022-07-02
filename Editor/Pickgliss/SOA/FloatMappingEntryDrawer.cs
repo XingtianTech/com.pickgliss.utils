@@ -4,7 +4,8 @@ using UnityEditor.UIElements;
 using UnityEngine.UIElements;
 
 // IngredientDrawerUIE
-[CustomPropertyDrawer(typeof(FloatMappingEntry))]
+[CustomPropertyDrawer(typeof(VariableMappingEntry<float>))]
+[CustomPropertyDrawer(typeof(VariableMappingEntry<int>))]
 public class FloatMappingEntryDrawer : PropertyDrawer
 {
     public override VisualElement CreatePropertyGUI(SerializedProperty property)
