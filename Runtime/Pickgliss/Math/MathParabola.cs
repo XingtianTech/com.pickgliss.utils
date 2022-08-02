@@ -22,9 +22,6 @@ namespace Pickgliss.Math
 
             return new Vector2(mid.x, f(t) + Mathf.Lerp(start.y, end.y, t));
         }
-
-
-        
     }
 
 }
