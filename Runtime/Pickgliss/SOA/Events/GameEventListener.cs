@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace Pickgliss.SOA.Events
 {
-    public class GameEventListener : UnityEngine.MonoBehaviour
+    public class GameEventListener : UnityEngine.MonoBehaviour,IEventListener
     {
         [Tooltip("Event to register with.")]
         public GameEvent @event;

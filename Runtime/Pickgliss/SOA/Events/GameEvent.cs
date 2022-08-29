@@ -9,7 +9,7 @@ namespace Pickgliss.SOA.Events
         /// <summary>
         /// The list of listeners that this event will notify if it is raised.
         /// </summary>
-        protected readonly List<GameEventListener> EventListeners = 
+        protected readonly List<IEventListener> EventListeners = 
             new();
 
         public virtual void Raise()
@@ -18,13 +18,13 @@ namespace Pickgliss.SOA.Events
                 EventListeners[i].OnEventRaised();
         }
 
-        public void RegisterListener(GameEventListener listener)
+        public void RegisterListener(IEventListener listener)
         {
             if (!EventListeners.Contains(listener))
                 EventListeners.Add(listener);
         }
 
-        public void UnregisterListener(GameEventListener listener)
+        public void UnregisterListener(IEventListener listener)
         {
             if (EventListeners.Contains(listener))
                 EventListeners.Remove(listener);
