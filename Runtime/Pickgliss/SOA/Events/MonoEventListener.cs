@@ -3,10 +3,10 @@ using UnityEngine.Events;
 
 namespace Pickgliss.SOA.Events
 {
-    public class GameEventListener : UnityEngine.MonoBehaviour,IEventListener
+    public class MonoAssetEventListener : MonoBehaviour,IAssetEventListener
     {
         [Tooltip("Event to register with.")]
-        public GameEvent @event;
+        public AssetEvent @event;
         [Tooltip("Response to invoke when Event is raised.")]
         public UnityEvent response;
 
