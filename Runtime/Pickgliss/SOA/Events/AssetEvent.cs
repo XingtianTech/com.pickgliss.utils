@@ -4,12 +4,12 @@ using UnityEngine;
 namespace Pickgliss.SOA.Events
 {
     [CreateAssetMenu(fileName = "GameEvent",menuName = "Event/GameEvent")]
-    public class GameEvent : ScriptableObject
+    public class AssetEvent : ScriptableObject
     {
         /// <summary>
         /// The list of listeners that this event will notify if it is raised.
         /// </summary>
-        protected readonly List<IEventListener> EventListeners = 
+        protected readonly List<IAssetEventListener> EventListeners = 
             new();
 
         public virtual void Raise()
@@ -18,13 +18,13 @@ namespace Pickgliss.SOA.Events
                 EventListeners[i].OnEventRaised();
         }
 
-        public void RegisterListener(IEventListener listener)
+        public void RegisterListener(IAssetEventListener listener)
         {
             if (!EventListeners.Contains(listener))
                 EventListeners.Add(listener);
         }
 
-        public void UnregisterListener(IEventListener listener)
+        public void UnregisterListener(IAssetEventListener listener)
         {
             if (EventListeners.Contains(listener))
                 EventListeners.Remove(listener);

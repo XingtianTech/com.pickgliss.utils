@@ -1,6 +1,6 @@
 namespace Pickgliss.SOA.Events
 {
-    public interface IEventListener
+    public interface IAssetEventListener
     {
         void OnEventRaised();
     }
