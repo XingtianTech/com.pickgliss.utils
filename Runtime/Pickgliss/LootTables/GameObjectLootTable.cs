@@ -2,7 +2,7 @@
 
 namespace Pickgliss.LootTables
 {
-    [CreateAssetMenu(fileName = "GameObjectLootTable", menuName = "Collection/GameObject Loot Table")]
+    [CreateAssetMenu(menuName = "Utils/Collection/GameObjectLootTable")]
     public class GameObjectLootTable : LootTable<GameObject> {
         
     }

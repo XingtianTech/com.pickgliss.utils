@@ -2,7 +2,7 @@
 
 namespace Pickgliss.SOA.Variables
 {
-    [CreateAssetMenu(fileName = "IntVariable",menuName = "Variable/IntVariable")]
+    [CreateAssetMenu(menuName = "Utils/Variable/IntVariable")]
     public class IntVariable : Variable<int>
     {
     }

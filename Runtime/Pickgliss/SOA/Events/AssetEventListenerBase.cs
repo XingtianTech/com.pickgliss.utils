@@ -3,12 +3,12 @@ using UnityEngine.Events;
 
 namespace Pickgliss.SOA.Events
 {
-    public class MonoEventListener : MonoBehaviour,IAssetEventListener
+    public abstract class AssetEventListenerBase : MonoBehaviour
     {
         [Tooltip("Event to register with.")]
         public AssetEvent @event;
-        [Tooltip("Response to invoke when Event is raised.")]
-        public UnityEvent response;
+        // [Tooltip("Response to invoke when Event is raised.")]
+        
 
         private void OnEnable()
         {
@@ -20,9 +20,9 @@ namespace Pickgliss.SOA.Events
             @event.UnregisterListener(this);
         }
 
-        public virtual void OnEventRaised()
-        {
-            response.Invoke();
-        }
+        public abstract void OnEventRaised();
+        // {
+        //     response.Invoke();
+        // }
     }
 }

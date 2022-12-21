@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Pickgliss.Random
 {
-    [CreateAssetMenu(fileName = "RandomRangeInt",menuName = "Random/RandomRangeInt")]
+    [CreateAssetMenu(fileName = "RandomRangeInt",menuName = "Utils/Random/RandomRangeInt")]
     public class RandomRangeInt : ScriptableObject
     {
         public Prng prng;

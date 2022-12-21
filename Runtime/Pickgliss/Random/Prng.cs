@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Pickgliss.Random
 {
-	[CreateAssetMenu(fileName = "Prng",menuName = "Random/Prng")]
+	[CreateAssetMenu(fileName = "Prng",menuName = "Utils/Random/Prng")]
 	public class Prng : ScriptableObject {
 
 		public enum Weight { None, Lower, Upper, Centre, Ends }
