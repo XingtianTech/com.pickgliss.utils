@@ -4,8 +4,8 @@ namespace Pickgliss.SOA.Variables
 {
     public abstract class RangeVariable<T> : VariableBase
     {
-        public Variable<T> min;
-        public Variable<T> max;
+        public VariableReference<T> min;
+        public VariableReference<T> max;
         public abstract T RandomOne();
     }
 }

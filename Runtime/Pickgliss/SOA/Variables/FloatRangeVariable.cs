@@ -9,7 +9,7 @@ namespace Pickgliss.SOA.Variables
     {
         public override float RandomOne()
         {
-            return UnityEngine.Random.Range(min.value,max.value);
+            return UnityEngine.Random.Range(min,max);
         }
     }
 }

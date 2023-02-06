@@ -1,4 +1,14 @@
 {
+  "scopedRegistries": [
+    {
+      "name": "com.pickgliss.utils",
+      "url": "https://github.com/pickgliss/com.pickgliss.utils.git",
+      "scopes": [
+        "com.pickgliss"
+      ]
+    }
+  ],
+ 
   "name": "com.pickgliss.utils",
   "displayName": "Utils",
   "version": "0.0.1",
