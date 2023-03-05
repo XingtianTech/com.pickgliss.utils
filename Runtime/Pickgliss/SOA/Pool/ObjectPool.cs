@@ -13,7 +13,7 @@ namespace Pickgliss.SOA.Pool
         void Awake()
         {
             pool.Clear();
-            for (int i = 0; i < Size; i++)
+            for (int i = 0; i < size; i++)
             {
                 CreateObject(); // PoolableObject handles re-adding the object to the AvailableObjects
             }
@@ -21,7 +21,7 @@ namespace Pickgliss.SOA.Pool
 
         private void CreateObject()
         {
-            PoolableObject poolableObject = GameObject.Instantiate(Prefab,Parent.transform);
+            PoolableObject poolableObject = GameObject.Instantiate(prefab);
             poolableObject.Parent = this;
             poolableObject.gameObject.SetActive(false); // PoolableObject handles re-adding the object to the AvailableObjects
         }
