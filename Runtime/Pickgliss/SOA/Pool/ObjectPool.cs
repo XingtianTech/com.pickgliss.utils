@@ -4,20 +4,21 @@ using UnityEngine;
 
 namespace Pickgliss.SOA.Pool
 {
+    [CreateAssetMenu(menuName = "Utils/Collection/ObjectPool")]
     public  class ObjectPool : ScriptableObject
     {
         public PoolableObject prefab;
-        public int size;
-        private List<PoolableObject> pool = new List<PoolableObject>();
+        // public int size;
+        private Stack<PoolableObject> pool = new Stack<PoolableObject>();
         
-        void Awake()
-        {
-            pool.Clear();
-            for (int i = 0; i < size; i++)
-            {
-                CreateObject(); // PoolableObject handles re-adding the object to the AvailableObjects
-            }
-        }
+        // void Awake()
+        // {
+        //     pool.Clear();
+        //     for (int i = 0; i < size; i++)
+        //     {
+        //         CreateObject(); // PoolableObject handles re-adding the object to the AvailableObjects
+        //     }
+        // }
 
         private void CreateObject()
         {
@@ -33,18 +34,19 @@ namespace Pickgliss.SOA.Pool
                 CreateObject();
             }
 
-            PoolableObject instance = pool[0];
+            // PoolableObject instance = pool[0];
 
-            pool.RemoveAt(0);
+            // pool.RemoveAt(0);
+            var item = pool.Pop();
 
-            instance.gameObject.SetActive(true);
+            item.gameObject.SetActive(true);
 
-            return instance;
+            return item;
         }
 
         public void ReturnObjectToPool(PoolableObject Object)
         {
-            pool.Add(Object);
+            pool.Push(Object);
         }
     }
 } 
