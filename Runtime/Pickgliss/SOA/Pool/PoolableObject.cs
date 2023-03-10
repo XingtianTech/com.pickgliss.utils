@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Pickgliss.SOA.Pool
 {
-    [AddComponentMenu( "SOA/PoolableObject" )]
+    [AddComponentMenu( "SOA/sssss" )]
     public class PoolableObject : MonoBehaviour
     {
         public ObjectPool Parent;
