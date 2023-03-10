@@ -1,7 +1,9 @@
+using UnityEngine;
+
 namespace Pickgliss.SOA.Collections
 {
     [AddComponentMenu( "SOA/Thing" )]
-    public class Thing : UnityEngine.MonoBehaviour
+    public class Thing : MonoBehaviour
     {
         public RuntimeSet<Thing> thingRuntimeSet;
 
