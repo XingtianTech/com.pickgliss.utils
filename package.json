@@ -1,7 +1,7 @@
 {
   "name": "com.pickgliss.utils",
   "displayName": "Utils",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "unity": "2020.3",
   "description": "utils",
   "hideInEditor": false,
